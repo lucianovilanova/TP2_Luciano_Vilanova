@@ -1,0 +1,41 @@
+    1  git clone https://github.com/lucianovilanova/TP2_Luciano_Vilanova.git
+    2  sudo fdisk /dev/sdd
+    3  free
+    4  free -h
+    5  sudo mkswap /dev/sdd1
+    6  free -h
+    7  sudo swapon /dev/sdd1
+    8  free -h
+    9  swapon -s
+   10  cat /proc/swaps
+   11  sudo fdisk /dev/sdc
+   12  sudo wipefs -a /dev/sdc1 sudo wipefs -a /dev/sdc1 /dev/sdc2 /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6
+   13  sudo wipefs -a /dev/sdc1  /dev/sdc2 /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6
+   14  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   15  sudo pvs
+   16  sudo vgcreate vg_datos /dev/sdc1 /dev/sdd2
+   17  sudo vgs
+   18  sudo pvs
+   19  sudo vgcreate vg_web /dev/sdc2
+   20  sudo pvs
+   21  sudo lvcreate -L 1G vg_web -n lv_web1
+   22  sudo lvcreate -L 512M vg_web -n lv_web2
+   23  sudo lvcreate -L 512M vg_web -n lv_web3
+   24  sudo lvs
+   25  sudo pvs
+   26  sudo fdisk -l
+   27  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1                                                                         sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2                                                                                             sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   28  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1                                                                         
+   29  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2                                                                         
+   30  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3                                                                         
+   31  sudo pvs > pvs.txt
+   32  sudo vgs > vgs.txt
+   33  sudo lvs > lvs.txt
+   34  history > history_lvm.txt
+   35  git add .
+   36  ls -l
+   37  cd TP2_Luciano_Vilanova/
+   38  sudo pvs > pvs.txt
+   39  sudo vgs > vgs.txt
+   40  sudo lvs > lvs.txt
+   41  history > historial_lvm.txt
